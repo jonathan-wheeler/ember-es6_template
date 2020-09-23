@@ -34,7 +34,9 @@ module Ember
       end
 
       def es6?(filename)
-        File.basename(filename) =~ /\.(?:es6|module)\./
+        base_name = File.basename(filename)
+        return false if base_name.match?('js.coffee')
+        base_name.match?('.coffee')
       end
     end
   end
