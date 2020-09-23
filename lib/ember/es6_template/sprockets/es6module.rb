@@ -53,6 +53,7 @@ module Ember
 
       def module_name(input)
         module_name = input[:name]
+        module_name = module_name.sub("#{@config.module_prefix}/app", @config.module_prefix) if @config.unnest_app_dir
 
         if input[:filename][File.expand_path(input[:name] + '/index', input[:load_path])]
           if module_name == '.'

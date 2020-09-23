@@ -1,8 +1,12 @@
 module Ember
   module ES6Template
     class Config
-      attr_accessor :module_prefix
+      attr_accessor :module_prefix, :unnest_app_dir
       attr_reader :prefix_dirs, :prefix_files
+
+      def initialize
+        @unnest_app_dir = true
+      end
 
       def prefix_dirs=(dirs)
         @prefix_pattern = nil
@@ -30,7 +34,8 @@ module Ember
         {
           module_prefix: module_prefix,
           prefix_files: prefix_files,
-          prefix_dirs: prefix_dirs
+          prefix_dirs: prefix_dirs,
+          unnest_app_dir: unnest_app_dir
         }
       end
     end
