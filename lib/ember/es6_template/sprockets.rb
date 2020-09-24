@@ -8,8 +8,8 @@ module Ember
     def self.setup(env)
       env.register_mime_type 'application/ecmascript-6', extensions: %w(.es6)
       env.register_mime_type 'application/ecmascript-6+module', extensions: %w(.module.es6)
-      env.register_mime_type 'text/coffeescript', extensions: %w(.es6.coffee .coffee)
-      env.register_mime_type 'text/coffeescript+module', extensions: %w(.module.es6.coffee .module.coffee)
+      env.register_mime_type 'text/coffeescript', extensions: %w(.es6.coffee js.coffee)
+      env.register_mime_type 'text/coffeescript+module', extensions: %w(.module.es6.coffee .coffee)
 
       env.register_transformer 'application/ecmascript-6', 'application/javascript', ES6
       env.register_transformer 'application/ecmascript-6+module', 'application/javascript', ES6Module
